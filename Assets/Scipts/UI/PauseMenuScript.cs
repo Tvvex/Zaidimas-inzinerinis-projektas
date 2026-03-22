@@ -1,11 +1,10 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
-using UnityEngine.Audio;
+
 public class PauseMenuScript : MonoBehaviour
 {
     public GameObject Menu;
-    public SliderJoint2D masterVol, musicVol, sfxVol;
     public void OnEscape()
     {
         if (Menu.activeSelf==false)
