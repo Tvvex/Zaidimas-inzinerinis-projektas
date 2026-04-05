@@ -4,6 +4,8 @@ using System.Collections;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Timeline;
+using UnityEngine.Playables;
 public class IntroScript : MonoBehaviour
 {
     public TextMeshProUGUI textComponent;
@@ -13,11 +15,18 @@ public class IntroScript : MonoBehaviour
     private int index;
     public string sceneName;
     private InputAction ClickAction;
+    public PlayableDirector timeline;
+    public SceneFader fader;
+    public float changeTime;
     void Start()
     {
         textComponent.text = string.Empty;
         StartText();
         ClickAction = InputSystem.actions.FindAction("Click");
+    }
+    public void SwitchScene(string sceneName)
+    {
+        fader.FadeAndLoad(sceneName, 1);
     }
     private void Update()
     {
@@ -61,7 +70,7 @@ public class IntroScript : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene(sceneName);
+            timeline.Play();
         }
     }
 }
