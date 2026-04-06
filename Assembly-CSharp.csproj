@@ -65,6 +65,7 @@
     <Compile Include="Assets\Scipts\UI\OptionsMenuManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\EnvMapAnimator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
+    <Compile Include="Assets\Scipts\UI\SceneFader.cs" />
     <Compile Include="Assets\Scipts\UI\MilitaryBackend\GameStats.cs" />
     <Compile Include="Assets\Scipts\Systems\MoneyInt.cs" />
     <Compile Include="Assets\Scipts\UI\ButtonScript.cs" />
