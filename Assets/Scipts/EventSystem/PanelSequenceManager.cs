@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class PanelSequenceManager : MonoBehaviour
 {
     public List<GameObject> panels;
+    public List<GameObject> notActivePanels;
     public List<Image> buttonImages;
     public Sprite active;
     public Sprite passive;
@@ -15,6 +16,7 @@ public class PanelSequenceManager : MonoBehaviour
     {
         SetActive();
         ShowPanel(currentIndex);
+        SetNonActive();
     }
 
     public void ShowPanel(int index)
@@ -44,6 +46,7 @@ public class PanelSequenceManager : MonoBehaviour
         currentIndex++;
         SetActive();
         ShowPanel(currentIndex);
+        SetNonActive();
     }
 
     public void IncreaseIndex()
@@ -66,5 +69,15 @@ public class PanelSequenceManager : MonoBehaviour
     public void SetPassive()
     {
         buttonImages[currentIndex].sprite = passive;
+    }
+    public void SetNonActive()
+    {
+        // ijungiam visus
+        foreach (var panel in notActivePanels)
+        {
+            panel.SetActive(true);
+        }
+        // ájungiam vienà
+        notActivePanels[currentIndex].SetActive(false);
     }
 }
